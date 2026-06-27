@@ -1,0 +1,69 @@
+name: Draw QMK keymaps
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "keyboards/**/keymap.c"
+      - "keymap_drawer.config.yaml"
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout userspace
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install QMK CLI and keymap-drawer
+        run: |
+          pip install qmk keymap-drawer
+
+      - name: Checkout QMK firmware
+        uses: actions/checkout@v4
+        with:
+          repository: qmk/qmk_firmware
+          path: qmk_firmware
+          persist-credentials: false
+
+      - name: Set up QMK home
+        run: |
+          qmk setup -H qmk_firmware -y
+
+      - name: Copy userspace keymaps into QMK tree
+        run: |
+          cp -r keyboards/* qmk_firmware/keyboards/
+
+      - name: Generate keymap diagram
+        run: |
+          mkdir -p keymap-drawer
+
+          qmk c2json \
+            -kb keebio/iris/rev8 \
+            -km apclark31 \
+            qmk_firmware/keyboards/keebio/iris/rev8/keymaps/apclark31/keymap.c \
+            --no-cpp \
+            | keymap parse -q \
+              -l Base Nav Fn Sym NumFn \
+              -Q keebio/iris/rev8 \
+            > keymap-drawer/iris.yaml
+
+          DRAW_ARGS=""
+          if [ -f keymap_drawer.config.yaml ]; then
+            DRAW_ARGS="-c keymap_drawer.config.yaml"
+          fi
+
+          keymap draw $DRAW_ARGS keymap-drawer/iris.yaml > keymap-drawer/iris.svg
+
+      - name: Commit diagrams
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add keymap-drawer/
+          git diff --cached --quiet || git commit -m "Update keymap diagram [skip ci]" && git push
