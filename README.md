@@ -24,7 +24,7 @@ QMK external userspace for my custom keyboard keymaps. Firmware is automatically
 
 Uses QMK's native `CHORDAL_HOLD` for tap-hold refinement (bilateral combinations rule).
 
-See the [Keymap Reference](keyboards/keebio/iris/rev8/keymaps/apclark31/KEYMAP_REFERENCE.md) for full layer diagrams and details.
+Layer diagrams are auto-generated in `keymap-drawer/iris.svg` on every push.
 
 ## Flashing
 
@@ -44,7 +44,7 @@ qmk flash -kb keebio/iris/rev8 -km apclark31
 
 ## Project Status
 
-Active development — see the [Working Plan](keyboards/keebio/iris/rev8/keymaps/apclark31/KEYMAP_PLAN.md) for what's been done, known issues, and next steps.
+Active development — planning docs are in the local `~/keyboards/` workspace.
 
 ## Related
 
