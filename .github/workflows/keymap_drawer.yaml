@@ -49,9 +49,10 @@ jobs:
             -km apclark31 \
             qmk_firmware/keyboards/keebio/iris/rev8/keymaps/apclark31/keymap.c \
             --no-cpp \
-            | keymap parse -q \
-              -l Base Nav Fn Sym NumFn \
-              -Q keebio/iris/rev8 \
+            > keymap-drawer/iris.json
+
+          keymap parse -q keymap-drawer/iris.json \
+            -l Base Nav Fn Sym NumFn \
             > keymap-drawer/iris.yaml
 
           DRAW_ARGS=""
