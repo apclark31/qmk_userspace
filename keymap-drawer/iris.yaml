@@ -44,7 +44,7 @@ layers:
   - V
   - B
   - MEH
-  - ''
+  - MEH
   - N
   - M
   - ','
@@ -134,9 +134,9 @@ layers:
   - $
   - '%'
   - ^
-  - '&'
+  - HOME
   - UP
-  - (
+  - END
   - )
   - {t: ▽, type: trans}
   - RM NEXT
@@ -160,7 +160,7 @@ layers:
   - (
   - LALT
   - +
-  - END
+  - PGUP
   - RM HUED
   - RM SATD
   - RM VALD
@@ -285,3 +285,60 @@ layers:
   - {t: ▽, type: trans}
   - {t: P0, type: held}
   - {t: ▽, type: trans}
+  Win:
+  - QK GESC
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - DEL
+  - TAB
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - BSPC
+  - LCTL
+  - {t: A, h: LCTL}
+  - {t: S, h: LALT}
+  - {t: D, h: LGUI}
+  - {t: F, h: LSFT}
+  - G
+  - H
+  - {t: J, h: RSFT}
+  - {t: K, h: RGUI}
+  - {t: L, h: LALT}
+  - {t: ;, h: RCTL}
+  - ''''
+  - LSFT
+  - {t: Z, h: Sym}
+  - X
+  - C
+  - V
+  - B
+  - MEH
+  - MEH
+  - N
+  - M
+  - ','
+  - .
+  - {t: /, h: Sym}
+  - RSFT
+  - LCTL
+  - Fn
+  - {t: ENT, h: Nav}
+  - {t: SPC, h: Sym}
+  - NumFn
+  - RALT
