@@ -4,17 +4,17 @@ extern const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM;
 #endif
 
 enum custom_keycodes {
-    OS_TOGG = SAFE_RANGE,
+    CK_OSTOGG = SAFE_RANGE,
 };
 
 const uint16_t PROGMEM os_toggle_combo[] = {KC_MEH, QK_GESC, COMBO_END};
 combo_t key_combos[] = {
-    COMBO(os_toggle_combo, OS_TOGG),
+    COMBO(os_toggle_combo, CK_OSTOGG),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case OS_TOGG:
+        case CK_OSTOGG:
             if (record->event.pressed) {
                 if (get_highest_layer(default_layer_state) == 5) {
                     default_layer_set(1UL << 0);
