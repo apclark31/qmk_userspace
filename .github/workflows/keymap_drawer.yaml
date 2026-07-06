@@ -52,7 +52,7 @@ jobs:
             > keymap-drawer/iris.json
 
           keymap parse -q keymap-drawer/iris.json \
-            -l Base Nav Fn Sym NumFn \
+            -l Base Nav Fn Sym NumFn Win \
             > keymap-drawer/iris.yaml
 
           DRAW_ARGS=""

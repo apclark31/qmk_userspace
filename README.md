@@ -10,21 +10,22 @@ QMK external userspace for my custom keyboard keymaps. Firmware is automatically
 
 ## Keymap Overview
 
-**5 layers** with QWERTY base, home row mods (GASC), and ZMK-style ASCII art formatting for readability.
+**6 layers** with QWERTY base (Mac + Win), home row mods (GASC), macros, and ZMK-style ASCII art formatting.
 
 | Layer | Activation | Purpose |
 |-------|------------|---------|
-| Base (0) | Default | QWERTY + home row mods |
+| Base (0) | Default | QWERTY + home row mods (macOS) |
 | Nav (1) | Hold Enter | Numpad (right) + editing (left) |
-| Fn (2) | Hold MO(2) | F-keys + symbols + arrows + RGB |
+| Fn (2) | Hold MO(2) | Macros + symbols + arrows + RGB |
 | Sym (3) | Hold Space / Z / / | Symbols |
 | NumFn (4) | Hold MO(4) | F-keys (left) + numpad (right) |
+| Win (5) | MEH+ESC combo | QWERTY + home row mods (Windows) |
 
 **Home Row Mods:** A=LCTL, S=LALT, D=LGUI, F=LSFT | J=RSFT, K=RGUI, L=LALT, ;=RCTL
 
 Uses QMK's native `CHORDAL_HOLD` for tap-hold refinement (bilateral combinations rule).
 
-Layer diagrams are auto-generated in `keymap-drawer/iris.svg` on every push.
+![Keymap diagram](keymap-drawer/iris.svg)
 
 ## Flashing
 

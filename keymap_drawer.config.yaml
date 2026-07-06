@@ -1,0 +1,16 @@
+draw_config:
+  svg_extra_style: |
+    svg.keymap {
+      background-color: #0d1117;
+      fill: #c9d1d9;
+    }
+    rect.key {
+      fill: #161b22;
+      stroke: #30363d;
+    }
+    rect.combo, rect.combo-separate {
+      fill: #1c2432;
+    }
+    rect.held, rect.combo.held {
+      fill: #3b1f1f;
+    }
