@@ -5,6 +5,11 @@ extern const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM;
 
 enum custom_keycodes {
     CK_OSTOGG = SAFE_RANGE,
+    CK_PASS,
+    CK_M2,
+    CK_M3,
+    CK_M4,
+    CK_M5,
 };
 
 const uint16_t PROGMEM os_toggle_combo[] = {KC_MEH, QK_GESC, COMBO_END};
@@ -21,6 +26,31 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 } else {
                     default_layer_set(1UL << 5);
                 }
+            }
+            return false;
+        case CK_PASS:
+            if (record->event.pressed) {
+                SEND_STRING("M0untBach3lor");
+            }
+            return false;
+        case CK_M2:
+            if (record->event.pressed) {
+                SEND_STRING("");
+            }
+            return false;
+        case CK_M3:
+            if (record->event.pressed) {
+                SEND_STRING("");
+            }
+            return false;
+        case CK_M4:
+            if (record->event.pressed) {
+                SEND_STRING("");
+            }
+            return false;
+        case CK_M5:
+            if (record->event.pressed) {
+                SEND_STRING("");
             }
             return false;
     }
@@ -59,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [2] = LAYOUT(
 // ╭──────────────────┬──────────────────┬──────────────────┬──────────────────┬──────────────────┬──────────────────╮                              ╭──────────────────┬──────────────────┬──────────────────┬──────────────────┬──────────────────┬──────────────────╮
-    KC_F12,            KC_F1,             KC_F2,             KC_F3,             KC_F4,             KC_F5,                                            KC_F6,             KC_F7,             KC_F8,             KC_F9,             KC_F10,            KC_F11,
+    KC_F12,            CK_PASS,           CK_M2,             CK_M3,             CK_M4,             CK_M5,                                            KC_F6,             KC_F7,             KC_F8,             KC_F9,             KC_F10,            KC_F11,
 // ├──────────────────┼──────────────────┼──────────────────┼──────────────────┼──────────────────┼──────────────────┤                              ├──────────────────┼──────────────────┼──────────────────┼──────────────────┼──────────────────┼──────────────────┤
     RM_TOGG,           KC_EXLM,           KC_AT,             KC_HASH,           KC_DLR,            KC_PERC,                                          KC_CIRC,           KC_HOME,           KC_UP,             KC_END,            KC_RPRN,           _______,
 // ├──────────────────┼──────────────────┼──────────────────┼──────────────────┼──────────────────┼──────────────────┤                              ├──────────────────┼──────────────────┼──────────────────┼──────────────────┼──────────────────┼──────────────────┤
