@@ -17,6 +17,12 @@ combo_t key_combos[] = {
     COMBO(os_toggle_combo, CK_OSTOGG),
 };
 
+void keyboard_post_init_user(void) {
+    if (default_layer_state & ~((1UL << 0) | (1UL << 1))) {
+        default_layer_set(1UL << 0);
+    }
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case CK_OSTOGG:

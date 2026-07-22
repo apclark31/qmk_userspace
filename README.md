@@ -15,11 +15,11 @@ QMK external userspace for my custom keyboard keymaps. Firmware is automatically
 | Layer | Activation | Purpose |
 |-------|------------|---------|
 | Base (0) | Default | QWERTY + home row mods (macOS) |
-| Nav (1) | Hold Enter | Numpad (right) + editing (left) |
-| Fn (2) | Hold MO(2) | Macros + symbols + arrows + RGB |
-| Sym (3) | Hold Space / Z / / | Symbols |
-| NumFn (4) | Hold MO(4) | F-keys (left) + numpad (right) |
-| Win (5) | MEH+ESC combo | QWERTY + home row mods (Windows) |
+| Win (1) | MEH+ESC combo | Sparse overlay -- swaps GUI/Ctrl for Windows |
+| Nav (2) | Hold Enter | Numpad (right) + editing (left) |
+| Fn (3) | Hold MO(3) | Macros (CK_PASS, M2-M5) + symbols + arrows + RGB |
+| Sym (4) | Hold Space / Z / / | Symbols |
+| NumFn (5) | Hold MO(5) | F-keys (left) + numpad (right) |
 
 **Home Row Mods:** A=LCTL, S=LALT, D=LGUI, F=LSFT | J=RSFT, K=RGUI, L=LALT, ;=RCTL
 
